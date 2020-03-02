@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codeageddon - The Game is on!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="{%static 'js/main.js'%}"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+  @media screen and (max-width: 500px){
+    .typewriter h1{
+      font-size: 1.4em;
+    }
+  }
+</style>
+<style type="text/css">
+      .popup52{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 1050;
+        display: grid;
+        margin: auto;
+      }
+      .pop54{
+        width: 20vw;
+        height: 5vw;
+        padding: 3vw;
+        background: white;
+        display: grid;
+        margin: auto;
+      }
+
+      .noti{
+        display: grid;
+        margin: auto;
+      }
+      .exits{
+        top: 42%;
+        right: 39%;
+        position: absolute;
+        display: grid;
+        margin: auto;
+
+      }
+
+
+      @media screen and (max-width: 1000px){
+        .exits{
+          right: 35%;
+        }
+        .pop54{
+          width: 28vw;
+          height: 7vw;
+        }
+      }
+      @media screen and (max-width: 900px){
+        .pop54{
+          width: 30vw;
+        }
+        .exits{
+          right: 33%;
+        }
+      }
+
+      @media screen and (max-width: 800px){
+        .pop54{
+          width: 33vw;
+        }
+        .exits{
+          right: 32%;
+        }
+      }
+
+      @media screen and (max-width: 750px){
+        .pop54{
+          width: 38vw;
+        }
+        .exits{
+          top:43%;
+          right: 30%;
+        }
+      }
+      @media screen and (max-width: 650px){
+        .pop54{
+          width: 40vw;
+        }
+        .exits{
+          top:44%;
+          right: 28%;
+        }
+      }
+
+      @media screen and (max-width: 600px){
+        .pop54{
+          width: 44vw;
+        }
+        .exits{
+          top:44%;
+          right: 26%;
+        }
+      }
+
+      @media screen and (max-width: 550px){
+        .pop54{
+          width: 48vw;
+          height: 10vh;
+        }
+        .exits{
+          top:44%;
+          right: 26%;
+        }
+      }
+
+      @media screen and (max-width: 500px){
+        .pop54{
+          width: 52vw;
+          height: 10vh;
+        }
+        .exits{
+          top:44%;
+          right: 24%;
+        }
+      }
+
+      @media screen and (max-width: 450px){
+        .pop54{
+          width: 58vw;
+          height: 12vh;
+        }
+        .exits{
+          top:44%;
+          right: 22%;
+        }
+      }
+      @media screen and (max-width: 420px){
+        .pop54{
+          width: 75vw;
+          height: 15vh;
+        }
+        .exits{
+          top:42%;
+          right: 15%;
+        }
+      }
+      @media screen and (max-width: 350px){
+        .pop54{
+          width: 75vw;
+          height: 15vh;
+        }
+        .exits{
+          top:42%;
+          right: 13%;
+        }
+      }
+      @media screen and (max-width: 330px){
+        .pop54{
+          width: 80vw;
+          height: 15vh;
+        }
+        .exits{
+          top:42%;
+          right: 10%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<div class="popup52" id="pop78">
+    <div class="pop54">
+      <p class="noti">For Hints head over to <a href="https://www.facebook.com/jssmmil/">Facebook</a>  💖💖</p>
+      <div class="exits">
+        <i class="fas fa-times-circle" style="cursor: pointer;" onclick="closeme()"></i>
+    </div>
+    </div>
+    
+  </div>
+    <div class="container">
+      <div class="neon">Codeageddon</div>
+      <div class="flux">the game is on</div>
+    </div>
+
+    <div class="container" id="machine">
+      <div class="topnav" id="myTopnav">
+        <a href="/"><button class="button">HOME</button></a>
+        <a href="/rules"><button class="button">RULES</button></a>
+        <a href="/leaderboard"><button class="button">LEADERBOARD</button></a>
+        {% if request.user.is_authenticated %}
+        <a href="/logout"><button class="button">LOG OUT</button></a>
+        <a href="/dashboard"><button class="button">DASHBOARD</button></a>
+        {% else %}
+        <a href="/login"><button class="button">LOG IN</button></a>
+        <a href="/signup"><button class="button">SIGN UP</button></a>
+        {% endif %}
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <!-- <img src="board.png" class="machine-img"> -->
+      <div class="typewriter">
+        <h1 class="">Welcome to Codeageddon</h1>
+        <p>
+          Gear up for an amusing online technical quiz which will be live throughout the fest. In Codeaggedon, put your knowledge to test and use your skills to craft the answers. Participants will be provided with questions and you have to answer at the correct place i.e. location of the computer network or URL to level up. The more and faster you answer, the quicker you will level up! It is a great opportunity to learn about your proficiency. <br>
+<br>
+          Sign up <a href="/signup" style="color: white">here</a>
+          <br><br>
+          Link to our Facebook page:<span><a href="https://www.facebook.com/jssmmil/"> MMIL JSS </a></span>
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function closeme(){
+        document.getElementById('pop78').style.display="none";
+      }
+    </script>
+  </body>
+</html>

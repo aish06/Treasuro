@@ -1,0 +1,28 @@
+.typewriter{
+	position: relative;
+	overflow: hidden;
+	overflow-y: scroll;
+	width: 100%;
+	/*left: 20%;*/
+  	/*top: 25vh;*/
+	z-index: 5;
+	height: 40vh;
+}
+
+.typewriter::-webkit-scrollbar {
+    width: 0.1em;
+}
+ 
+.typewriter::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.typewriter::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+@media(max-width: 1030px){
+  .typewriter{
+    height: 47vh;
+  }
+}

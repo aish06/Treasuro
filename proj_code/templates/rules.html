@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codeageddon - The Game is on!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/scroll.css' %}" />
+    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="neon">Codeageddon</div>
+      <div class="flux">the game is on</div>
+    </div>
+
+    <div class="container" id="machine">
+      <div class="topnav" id="myTopnav">
+        <a href="/"><button class="button">HOME</button></a>
+        <a href="/rules"><button class="button">RULES</button></a>
+        <a href="/leaderboard"><button class="button">LEADERBOARD</button></a>
+        {% if request.user.is_authenticated %}
+        <a href="/logout"><button class="button">LOG OUT</button></a>
+        <a href="/dashboard"><button class="button">DASHBOARD</button></a>
+        {% else %}
+        <a href="/login"><button class="button">LOG IN</button></a>
+        <a href="/signup"><button class="button">SIGN UP</button></a>
+        {% endif %}
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <!-- <img src="board.png" class="machine-img"> -->
+      <div class="typewriter">
+        <h1 class="">Please read the instructions carefully!!</h1>
+        <p>
+          <i class="fas fa-hand-point-right"></i> <b>Game Play:</b>At each level, you will be provided with a clue which will be pointing towards only one answer. Once you crack the clue, you will have to put the answer in the following url for next level - <br>"http://codeageddon.zealicon.in/dashboard?q=answer" .
+          <br><br>
+          <i class="fas fa-hand-point-right"></i> <b>Duration:</b> The online quest will be live through out the Fest.
+          <br><br>
+          <i class="fas fa-hand-point-right"></i> <b>Submissions:</b> Every level holds 10 points and there are no deduction of points if you answer wrong.<br><br>
+          <i class="fas fa-hand-point-right"></i> <b>Appeals: </b> There are no appeals in this game but if you think there is an error,feel free to <a href="https://api.whatsapp.com/send?phone=917052093141">contact us</a>.
+          <br><br>
+
+<i class="fas fa-hand-point-right"></i> <b>Judgements:</b> Use only your first name as user name, usage of any fancy or foul name will lead to disqualification. The society holds the right to disqualify any individual in case of any unethical means. *All the decisions made by the society are final. <br><br>
+      Link to our Facebook page:<span><a href="https://www.facebook.com/jssmmil/"> MMIL JSS </a></span>
+
+
+          
+        </p>
+      </div>
+      <br>
+<b>Head over to the <span><a href="/dashboard">Dashboard</a><span></b> <br>
+    </div>
+  </body>
+</html>

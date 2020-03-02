@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leader Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/leader.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+  <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="neon">Codeageddon</div>
+    <div class="flux">the game is on</div>
+  </div>
+
+  <div class="container" id="machine">
+    <div class="topnav" id="myTopnav">
+      <a href="/"><button class="button">HOME</button></a>
+      <a href="/rules"><button class="button">RULES</button></a>
+      <a href="/leaderboard"><button class="button">LEADERBOARD</button></a>
+      {% if request.user.is_authenticated %}
+        <a href="/logout"><button class="button">LOG OUT</button></a>
+        <a href="/dashboard"><button class="button">DASHBOARD</button></a>
+        {% else %}
+        <a href="/login"><button class="button">LOG IN</button></a>
+        <a href="/signup"><button class="button">SIGN UP</button></a>
+        {% endif %}
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="leaderboard">
+      <h1>LEADERBOARD</h1>
+      {% if hg %}
+            <h6 style="color: white;">Your Rank - {{rank}}</h6>
+            {% endif %}
+          
+          <ol>
+            {% for obj in object %}
+              <li>
+                <mark>{{ obj.name|truncatewords:1 }}</mark>
+                <small>{{ obj.points }}</small>
+              </li>
+            {% endfor %}
+          </ol>
+        </div>
+      <!--<ol>
+        <li>
+          <mark>Jerry Wood</mark>
+          <small>315</small>
+        </li>
+        <li>
+          <mark>Brandon Barnes</mark>
+          <small>301</small>
+        </li>
+        <li>
+          <mark>Raymond Knight</mark>
+          <small>292</small>
+        </li>
+        <li>
+          <mark>Trevor McCormick</mark>
+          <small>245</small>
+        </li>
+        <li>
+          <mark>Andrew Fox</mark>
+          <small>203</small>
+        </li>
+        <li>
+          <mark>Jerry Wood</mark>
+          <small>315</small>
+        </li>
+        <li>
+          <mark>Brandon Barnes</mark>
+          <small>301</small>
+        </li>
+        <li>
+          <mark>Raymond Knight</mark>
+          <small>292</small>
+        </li>
+        <li>
+          <mark>Trevor McCormick</mark>
+          <small>245</small>
+        </li>
+        <li>
+          <mark>Andrew Fox</mark>
+          <small>203</small>
+        </li>
+        <li>
+          <mark>Jerry Wood</mark>
+          <small>315</small>
+        </li>
+        <li>
+          <mark>Brandon Barnes</mark>
+          <small>301</small>
+        </li>
+        <li>
+          <mark>Raymond Knight</mark>
+          <small>292</small>
+        </li>
+        <li>
+          <mark>Trevor McCormick</mark>
+          <small>245</small>
+        </li>
+        <li>
+          <mark>Andrew Fox</mark>
+          <small>203</small>
+        </li>-->
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
